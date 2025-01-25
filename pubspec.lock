@@ -254,6 +254,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.6.1"
+  flutter_sms:
+    dependency: "direct main"
+    description:
+      name: flutter_sms
+      sha256: "2fe5f584f02596343557eeca56348f9b82413fefe83a423fab880cdbdf54d8d8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.3"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -473,7 +481,7 @@ packages:
     source: hosted
     version: "1.1.0"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: "50c5dd5b6e1aaf6fb3a78b33f6aa3afca52bf903a8a5298f53101fdaee55bbcd"
@@ -613,14 +621,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  sms_advanced:
-    dependency: "direct main"
-    description:
-      name: sms_advanced
-      sha256: "9d9ae78a6b692758ede569798f60afe6dc907fd25b03d54d290585a9f2fbf148"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   source_gen:
     dependency: transitive
     description:
