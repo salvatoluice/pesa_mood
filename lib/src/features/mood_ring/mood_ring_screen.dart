@@ -43,7 +43,7 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
             style: TextStyle(fontWeight: FontWeight.w800)),
         actions: [
           IconButton(
-            icon: Icon(Icons.refresh, color: colors.primary),
+            icon: Icon(Icons.refresh, color: colors.primary), // Keep this
             onPressed: () => ref.read(financialProvider.notifier).refreshData(),
             tooltip: 'Refresh insights',
           ),
@@ -71,8 +71,11 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
-            Theme.of(context).colorScheme.background,
+            Theme.of(context)
+                .colorScheme
+                .primaryContainer
+                .withOpacity(0.3), // Keep this
+            Theme.of(context).colorScheme.background, // Keep this
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
@@ -103,7 +106,10 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
                     fontWeight: FontWeight.w900,
                     foreground: Paint()
                       ..shader = LinearGradient(
-                        colors: [Colors.green.shade400, Colors.green.shade700],
+                        colors: [
+                          Colors.green.shade400,
+                          Colors.green.shade700
+                        ], // Keep this
                       ).createShader(
                         const Rect.fromLTWH(0, 0, 100, 50),
                       ),
@@ -112,7 +118,7 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
                 Text(
                   'Savings Power',
                   style: TextStyle(
-                    color: Colors.grey.shade600,
+                    color: Colors.grey.shade600, // Keep this
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
@@ -133,11 +139,11 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: Theme.of(context).colorScheme.surface, // Keep this
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withOpacity(0.05), // Keep this
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -146,7 +152,8 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
             child: Row(
               children: [
                 Icon(Icons.rocket_launch_rounded,
-                    color: Theme.of(context).colorScheme.primary, size: 32),
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 32), // Keep this
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
@@ -162,14 +169,15 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
                       Text(
                         state.financialMood,
                         style: TextStyle(
-                          color: Colors.grey.shade600,
+                          color: Colors.grey.shade600, // Keep this
                           fontSize: 14,
                         ),
                       ),
                     ],
                   ),
                 ),
-                Icon(Icons.chevron_right_rounded, color: Colors.grey.shade400),
+                Icon(Icons.chevron_right_rounded,
+                    color: Colors.grey.shade400), // Keep this
               ],
             ),
           ),
@@ -190,13 +198,13 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w800,
-              color: Colors.grey.shade800,
+              color: Colors.grey.shade800, // Keep this
             ),
           ),
           Text(
             'View All',
             style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.primary, // Keep this
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -215,7 +223,10 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
-          colors: [color.withOpacity(0.05), color.withOpacity(0.15)],
+          colors: [
+            color.withOpacity(0.05),
+            color.withOpacity(0.15)
+          ], // Keep this
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
@@ -224,20 +235,20 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
         leading: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withOpacity(0.1), // Keep this
             shape: BoxShape.circle,
           ),
-          child: Icon(icon, color: color),
+          child: Icon(icon, color: color), // Keep this
         ),
         title: Text(
           transaction.description,
-          style: const TextStyle(fontWeight: FontWeight.w600),
+          style: const TextStyle(fontWeight: FontWeight.w600), // Keep this
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: Text(
           category,
-          style: TextStyle(color: Colors.grey.shade600),
+          style: TextStyle(color: Colors.grey.shade600), // Keep this
         ),
         trailing: Column(
           mainAxisSize: MainAxisSize.min,
@@ -246,14 +257,14 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
             Text(
               'KES ${transaction.amount.toStringAsFixed(0)}',
               style: TextStyle(
-                color: Colors.grey.shade800,
+                color: Colors.grey.shade800, // Keep this
                 fontWeight: FontWeight.w700,
               ),
             ),
             Text(
               _formatDate(transaction.date),
               style: TextStyle(
-                color: Colors.grey.shade500,
+                color: Colors.grey.shade500, // Keep this
                 fontSize: 12,
               ),
             ),
@@ -267,39 +278,39 @@ class _FinancialMoodScreenState extends ConsumerState<FinancialMoodScreen>
   Color _getTransactionColor(String type) {
     switch (type) {
       case 'bill':
-        return Colors.blue;
+        return Colors.blue; // Keep this
       case 'saving':
-        return Colors.green;
+        return Colors.green; // Keep this
       case 'splurge':
-        return Colors.red;
+        return Colors.red; // Keep this
       default:
-        return Colors.grey;
+        return Colors.grey; // Keep this
     }
   }
 
   IconData _getTransactionIcon(String type) {
     switch (type) {
       case 'bill':
-        return Icons.receipt;
+        return Icons.receipt; // Keep this
       case 'saving':
-        return Icons.savings;
+        return Icons.savings; // Keep this
       case 'splurge':
-        return Icons.shopping_cart;
+        return Icons.shopping_cart; // Keep this
       default:
-        return Icons.attach_money;
+        return Icons.attach_money; // Keep this
     }
   }
 
   String _getCategoryLabel(String type) {
     switch (type) {
       case 'bill':
-        return 'Bill Payment';
+        return 'Bill Payment'; // Keep this
       case 'saving':
-        return 'Savings';
+        return 'Savings'; // Keep this
       case 'splurge':
-        return 'Shopping';
+        return 'Shopping'; // Keep this
       default:
-        return 'Transaction';
+        return 'Transaction'; // Keep this
     }
   }
 

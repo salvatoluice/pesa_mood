@@ -10,7 +10,7 @@ void main() async {
   runApp(
     ProviderScope(
       // Add this wrapper
-      child: const MainApp(),
+      child: const App(),
     ),
   );
 }

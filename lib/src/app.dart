@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mpesa_mood_ring/src/config/theme/app_theme.dart';
-import 'package:mpesa_mood_ring/src/features/mood_ring/mood_ring_screen.dart';
+import 'package:mpesa_mood_ring/src/app/root_layout.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ProviderScope(
-      child: MaterialApp(
-        theme: appTheme,
-        home: const FinancialMoodScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Pesa Pulse',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF00B894), // Your primary color
+          brightness: Brightness.light,
+          primary: const Color(0xFF00B894),
+          secondary: const Color(0xFF0984E3),
+          surface: Colors.white,
+          background: Colors.white,
+          onSurface: Colors.black87,
+        ),
       ),
+      home: const RootLayout(),
     );
   }
 }
